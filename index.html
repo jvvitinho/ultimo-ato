@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Anna Luiza</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #ffdee9, #b5fffc, #f9d6ff, #ffe6cc);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #333;
+      overflow-x: hidden;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .particles span {
+      position: absolute;
+      width: 6px; height: 6px;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+    @keyframes float {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px;
+      color: white;
+      background: rgba(168, 107, 216, 0.85);
+      backdrop-filter: blur(6px);
+      border-bottom: 3px solid #fff;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #a86bd8; }
+      to { text-shadow: 0 0 20px #fff, 0 0 40px #ffd68a; }
+    }
+    header p {
+      margin-top: 15px;
+      font-size: 1.3em;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeInUp 2s ease;
+      position: relative;
+      z-index: 1;
+    }
+    section h2 {
+      color: #a86bd8;
+      margin-bottom: 20px;
+      font-size: 2em;
+      text-align: center;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #a86bd8;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .mensagem {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .mensagem:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+    .mensagem p {
+      margin: 0 0 15px;
+      font-size: 1.2em;
+      line-height: 1.7;
+    }
+
+    .typing {
+      border-right: 2px solid #a86bd8;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 8s steps(80, end), blink .75s step-end infinite;
+      display: inline-block;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+.fotos .galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.fotos img {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.fotos img:hover {
+  transform: scale(1.05);
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.videos video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.videos video:hover {
+  transform: scale(1.03);
+}
+
+    .musica {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .musica audio {
+      width: 80%;
+      outline: none;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background-color: #a86bd8;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      font-size: 1em;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    footer::before {
+      content: "❤";
+      font-size: 2em;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -15px;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: translateX(-50%) scale(1); }
+      50% { transform: translateX(-50%) scale(1.3); }
+      100% { transform: translateX(-50%) scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="particles">
+    <span style="left:10%; animation-duration:12s;"></span>
+    <span style="left:30%; animation-duration:15s;"></span>
+    <span style="left:50%; animation-duration:10s;"></span>
+    <span style="left:70%; animation-duration:18s;"></span>
+    <span style="left:90%; animation-duration:14s;"></span>
+  </div>
+
+  <header>
+    <h1>Para Anna Luiza</h1>
+    <p class="typing">Um espaço feito com carinho e sinceridade, para guardar palavras que vêm do coração...</p>
+  </header>
+  <section>
+    <h2>Mensagem de abertura</h2>
+    <div class="mensagem">
+      <p>Anna, eu sei que já passamos por momentos difíceis, e talvez o tempo tenha deixado marcas que não se apagam facilmente. Mas dentro de mim existe uma vontade enorme de falar, de abrir o coração e deixar que você saiba tudo o que ainda sinto. Este espaço é mais do que um site, é um pedaço da minha alma colocado em palavras.</p>
+      <p>Eu lembro dos nossos sorrisos, das conversas que pareciam não ter fim, dos pequenos gestos que faziam toda a diferença. Lembro também dos erros, das brigas, das vezes em que não conseguimos nos entender. Mas acima de tudo, lembro da intensidade com que vivemos, e isso é algo que não se perde. O tempo pode tentar apagar, mas o coração insiste em guardar.</p>
+      <p>Hoje eu escrevo não para pedir nada, mas para desabafar. Para dizer que ainda existe em mim um carinho imenso por você, uma saudade que aparece nos momentos mais inesperados. Eu penso em como seria se tivéssemos feito diferente, se tivéssemos tido mais paciência, mais calma, mais cuidado. Mas sei que não podemos voltar atrás. Só podemos olhar para frente e decidir o que fazer com o que sentimos agora.</p>
+      <p>Eu não quero te pressionar, nem te cobrar. Quero apenas que você saiba que, apesar de tudo, eu continuo acreditando que a vida pode nos dar novas chances. Talvez seja para recomeçar juntos, talvez seja apenas para encontrar paz e amizade. Seja como for, eu quero que você esteja bem, que encontre felicidade, que sorria de verdade. Porque, no fim das contas, o que mais importa é ver você feliz.</p>
+      <p>Este espaço é a minha forma de mostrar que ainda existe verdade nas minhas palavras. Que não importa o tempo, nem a distância, nem os erros: o que foi vivido merece ser lembrado com carinho. E se algum dia você sentir que também quer conversar, que também quer abrir o coração, eu estarei aqui. Sem pressa, sem exigências, apenas com a vontade sincera de ouvir e de compartilhar.</p>
+      <p>Anna, eu sei que talvez você tenha seguido em frente, que talvez tenha encontrado novos caminhos, novas pessoas, novas histórias. E eu respeito isso. Mas mesmo assim, dentro de mim, existe uma parte que sempre vai ser sua. Uma parte que não se apaga, que não se substitui, que não se esquece. É como uma marca que o tempo não consegue apagar.</p>
+      <p>Eu penso em você quando vejo coisas simples: uma música que toca e me lembra de nós, um lugar que visitamos, uma frase que você dizia. São detalhes que parecem pequenos, mas que carregam um peso enorme. E é nesses momentos que eu percebo o quanto você ainda está presente, mesmo quando não está ao meu lado.</p>
+      <p>Sei que talvez eu não tenha sido o melhor em muitos momentos. Sei que errei, que falhei, que deixei de ser o que você precisava. Mas também sei que aprendi. Aprendi a valorizar mais, a ouvir mais, a cuidar mais. E se algum dia tivermos a chance de recomeçar, quero que seja diferente. Quero que seja leve, sincero, verdadeiro. Quero que seja algo que nos faça bem.</p>
+      <p>Este é o meu desabafo, Anna. Longo, talvez confuso, mas cheio de sentimentos reais. Se tocar o seu coração, já terá cumprido o seu propósito. E se não tocar, tudo bem. Porque pelo menos eu consegui dizer o que estava guardado dentro de mim. E isso, por si só, já é um alívio.</p>
+    </div>
+  </section>
+
+
+  <section class="foto">
+    <h2>Uma lembrança especial</h2>
+    <img src="c:\Users\Usuário\Downloads\ultimo ato\WhatsApp Image 2025-12-03 at 19.14.48 (2).jpeg" alt="Foto especial">
+  </section>
+
+  <section>
+    <h2>Vídeos</h2>
+    <div class="videos">
+      <video controls>
+        <source src="c:\Users\Usuário\Downloads\ultimo ato\WhatsApp Video 2025-12-03 at 19.16.36.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <video controls>
+        <source src="c:\Users\Usuário\Downloads\ultimo ato\WhatsApp Video 2026-01-03 at 16.16.37.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+  <section class="foto">
+    <h2>Uma lembrança especial</h2>
+    <img src="c:\Users\Usuário\Downloads\ultimo ato\WhatsApp Image 2025-12-03 at 19.14.48.jpeg" alt="Foto especial">
+  </section>
+    </div>
+  </section>
+
+  <section class="musica">
+    <h2>Música de Fundo</h2>
+    <p>Uma canção para acompanhar este espaço:</p>
+    <audio controls autoplay loop>
+      <source src="c:\Users\Usuário\Downloads\ultimo ato\magia---secondtime-pejota-vmz-tauz-rodrigo-zin-oninho-lylo-jkz-lex-e-akashi.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </section>
+  <section>
+  <h2>Carta Final</h2>
+  <div class="mensagem">
+    <p>Anna, se você chegou até aqui, é porque de alguma forma minhas palavras tocaram o seu coração. E eu quero que esta parte seja como uma carta aberta, sem máscaras, sem medo, apenas com a verdade que carrego dentro de mim.</p>
+    <p>Eu sei que não fui perfeito. Sei que em muitos momentos deixei de ser o que você precisava, e isso me dói. Mas também sei que cada erro me ensinou, e que hoje eu sou alguém que aprendeu a valorizar mais, a ouvir mais, a cuidar mais. Se eu pudesse voltar no tempo, faria diferente. Mas como não posso, deixo aqui a promessa de que, se um dia tivermos a chance de recomeçar, será com mais leveza, mais paciência e mais amor.</p>
+    <p>Não escrevo para te prender ao passado, mas para mostrar que ainda existe em mim um espaço que é só seu. Um espaço que não se apaga, que não se substitui, que não se esquece. É como uma marca que o tempo não consegue apagar, e que eu carrego com orgulho, porque significa que vivi algo verdadeiro ao seu lado.</p>
+    <p>Eu penso em você nos detalhes: em músicas que parecem falar de nós, em lugares que guardam nossas lembranças, em frases que você dizia e que ainda ecoam na minha mente. São pequenas coisas que me lembram que, mesmo distante, você continua presente em mim.</p>
+    <p>Sei que talvez você tenha seguido em frente, e eu respeito isso. Mas mesmo assim, eu precisava escrever. Precisava abrir o coração e deixar que você soubesse que, apesar de tudo, ainda existe em mim carinho, respeito e saudade. E se algum dia você sentir vontade de conversar, de relembrar ou até de recomeçar, eu estarei aqui. Sem pressa, sem exigências, apenas com a vontade sincera de estar ao seu lado de alguma forma.</p>
+    <p>Esta é a minha carta final, Anna. Não como um adeus, mas como um registro do que sinto. Se tocar o seu coração, já terá cumprido o seu propósito. E se não tocar, tudo bem. Porque pelo menos eu consegui dizer o que estava guardado dentro de mim. E isso, por si só, já é um alívio.</p>
+  </div>
+</section>
+  <footer>
+    <p>Feito com carinho • Jv</p>
+  </footer>
+</body>
+</html>
